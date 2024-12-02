@@ -1,0 +1,21 @@
+https://leetcode.com/problems/maximum-subarray/description/ :[53] A que on max subarray can be solve using kadne's algo.
+
+
+```
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int i=0; i<nums.length; i++){
+            sum += nums[i];
+            max = Math.max(max, sum);
+            if(sum<0){
+                sum = 0;
+            }
+        }
+        return max;
+    }
+}
+```
+
+TC = 0(N) & SC = 0(1)
