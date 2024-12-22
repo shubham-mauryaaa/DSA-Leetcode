@@ -1,4 +1,7 @@
 https://leetcode.com/problems/maximum-subarray/description/ :[53] A que on max subarray can be solve using kadne's algo.
+-> Kadane's Algo is used to find max sum of a contigous subarray.
+-> TC = 0(N) & SC = 0(1)
+
 
 
 ```
@@ -17,5 +20,3 @@ class Solution {
     }
 }
 ```
-
-TC = 0(N) & SC = 0(1)
