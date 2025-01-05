@@ -1,0 +1,36 @@
+//141. Linked List Cycle
+//bruteforce using hash table
+public class Solution { 
+    public boolean hasCycle(ListNode head) {
+        HashMap<ListNode, Integer> map = new HashMap<>();
+        ListNode temp = head;
+        if(head == null || head.next == null) return false;
+        while(temp != null){
+            if(!map.containsKey(temp)){
+                map.put(temp, 1);
+                temp = temp.next;
+            }else return true;
+        }
+        return false;
+    }
+}
+
+
+// optimise using tortise and hare method => TC= 0(N) SC = 0(1)
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head == null || head.next == null){
+            return false;
+        }
+        ListNode slowPointer = head;
+        ListNode fastPointer = head;
+        if(head == null) return false;
+        while(fastPointer != null && fastPointer.next != null){
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+            if(slowPointer == fastPointer) return true;
+        }
+        return false;
+    }
+}
